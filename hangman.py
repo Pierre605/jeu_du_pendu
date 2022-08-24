@@ -22,7 +22,7 @@ def level_option():
         if len(level_input) == 1 and level_input in ['1', '2', '3']:
             return level_input
         else:
-            print("\nTapez 1, 2 ou 3")
+            print("\n ! Tapez 1, 2 ou 3")
             continue
 
 
@@ -47,13 +47,16 @@ def hang():
         print("\nNiveau FACILE\n")
         count = 0
         final1 = []
+        first_and_last_letter = []
         word_found_letters = []
         easy_level_setup = []
 
+        first_and_last_letter.append(liss_word_to_find[0])
+        first_and_last_letter.append(liss_word_to_find[-1])
         word_found_letters.append(liss_word_to_find[0])
         word_found_letters.append(liss_word_to_find[-1])
         for i in range(len(word_to_find)):
-            if liss_word_to_find[i] in word_found_letters:
+            if liss_word_to_find[i] in first_and_last_letter:
                 easy_level_setup.append(" " + word_to_find[i] + " ")
             else:
                 easy_level_setup.append(" _ ")
@@ -77,7 +80,7 @@ def hang():
                                 final1.append(" " + word_to_find[i] + " ")
                             else:
                                 final1.append(" _ ") 
-                        print(''.join(final1))
+                        print('\n' + ''.join(final1) + '\n')
 
                         if " _ " not in final1:
                             return GAME_END[0]
@@ -90,18 +93,21 @@ def hang():
                                 return f'{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
                             else:
                                 print(HANGMANPICS[count-1], end="\n")
-                                print(''.join(final1))
+                                print('\n' + ''.join(final1) + '\n')
                         else:
                             if count > 6:
                                 return f'{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
                             else:
                                 print(HANGMANPICS[count+1], end="\n")
-                                print(''.join(final1))
+                                if word_found_letters != first_and_last_letter:
+                                    print('\n' + ''.join(final1) + '\n')
+                                else:
+                                    print('\n' + ''.join(easy_level_setup) + '\n')
 
                         input1 = input("Tapez une lettre: ")
         
             else:
-                print("Vous devez entrer une lettre et une seule: ")
+                print("\n ! Vous devez entrer une lettre et une seule: ")
                 continue
 
 
@@ -130,7 +136,7 @@ def hang():
                                 final1.append(" " + word_to_find[i] + " ")
                             else:
                                 final1.append(" _ ") 
-                        print(''.join(final1))
+                        print('\n' + ''.join(final1) + '\n')
 
                         if " _ " not in final1:
                             return GAME_END[0]
@@ -144,24 +150,24 @@ def hang():
                             else:
                                 print(HANGMANPICS[count-1], end="\n")
                                 if word_found_letters:
-                                    print(''.join(final1))
+                                    print('\n' + ''.join(final1) + '\n')
                                 else:
-                                    print(" _ " * len(word_to_find))
+                                    print('\n' + (" _ " * len(word_to_find)) + '\n')
                         else:
                             if count > 6:
                                 return f'{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
                             else:
                                 print(HANGMANPICS[count+1], end="\n")
                                 if word_found_letters:
-                                    print(''.join(final1))
+                                    print('\n' + ''.join(final1) + '\n')
                                 else:
-                                    print(" _ " * len(word_to_find))
+                                    print('\n' + (" _ " * len(word_to_find)) + '\n')
                         
 
                         input1 = input("Tapez une lettre: ")
         
             else:
-                print("Vous devez entrer une lettre et une seule: ")
+                print("\n !Vous devez entrer une lettre et une seule: ")
                 continue
 
     elif level == '3':
@@ -191,7 +197,7 @@ def hang():
                                 final1.append(" " + word_to_find[i] + " ")
                             else:
                                 final1.append(" _ ") 
-                        print(''.join(final1))
+                        print('\n' + ''.join(final1) + '\n')
 
                         if " _ " not in final1:
                             return GAME_END[0]
@@ -205,33 +211,33 @@ def hang():
                             else:
                                 print(HANGMANPICS[count-1], end="\n")
                                 if word_found_letters:
-                                    print(''.join(final1))
+                                    print('\n' + ''.join(final1) + '\n')
                                 else:
-                                    print(" _ " * len(word_to_find))
+                                    print('\n' + (" _ " * len(word_to_find)) + '\n')
                         elif len(word_to_find) <= 8 and len(word_to_find) > 5:
                             if count > 5:
                                 return f'{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
                             else:
                                 print(HANGMANPICS[count+2], end="\n")
                                 if word_found_letters:
-                                    print(''.join(final1))
+                                    print('\n' + ''.join(final1) + '\n')
                                 else:
-                                    print(" _ " * len(word_to_find))
+                                    print('\n' + (" _ " * len(word_to_find)) + '\n')
                         else:
                             if count > 4:
                                 return f'{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
                             else:
                                 print(HANGMANPICS_lvl3[count+2], end="\n")
                                 if word_found_letters:
-                                    print(''.join(final1))
+                                    print('\n' + ''.join(final1) + '\n')
                                 else:
-                                    print(" _ " * len(word_to_find))
+                                    print('\n' + (" _ " * len(word_to_find)) + '\n')
                         
 
                         input1 = input("Tapez une lettre: ")
         
             else:
-                print("Vous devez entrer une lettre et une seule: ")
+                print("\n ! Vous devez entrer une lettre et une seule: ")
                 continue
 
 
