@@ -175,8 +175,15 @@ def hang():
         count = 0
         final1 = []
         word_found_letters = []
-        HANGMANPICS_lvl3 = HANGMANPICS
-        HANGMANPICS_lvl3.pop(0)
+        HANGMANPICS_lvl3_1 = []
+        HANGMANPICS_lvl3_2 = []
+        PICS_index_to_keep_1 = [2, 3, 4, 6, 7, 8]
+        PICS_index_to_keep_2 = [2, 3, 4, 6, 8]
+        for i in PICS_index_to_keep_1:
+            HANGMANPICS_lvl3_1.append(HANGMANPICS[i])
+        for j in PICS_index_to_keep_2:
+            HANGMANPICS_lvl3_2.append(HANGMANPICS[j])
+
 
         print(' _ ' * len(word_to_find))
 
@@ -218,7 +225,7 @@ def hang():
                             if count > 5:
                                 return f'{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
                             else:
-                                print(HANGMANPICS[count+2], end="\n")
+                                print(HANGMANPICS_lvl3_1[count-1], end="\n")
                                 if word_found_letters:
                                     print('\n' + ''.join(final1) + '\n')
                                 else:
@@ -227,7 +234,7 @@ def hang():
                             if count > 4:
                                 return f'{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
                             else:
-                                print(HANGMANPICS_lvl3[count+2], end="\n")
+                                print(HANGMANPICS_lvl3_2[count-1], end="\n")
                                 if word_found_letters:
                                     print('\n' + ''.join(final1) + '\n')
                                 else:
