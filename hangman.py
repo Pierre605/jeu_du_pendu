@@ -90,13 +90,13 @@ def hang():
                         count += 1
                         if len(word_to_find) > 6:
                             if count > 8:
-                                return f'{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
+                                return f'{HANGMANPICS[8]}\n{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
                             else:
                                 print(HANGMANPICS[count-1], end="\n")
                                 print('\n' + ''.join(final1) + '\n')
                         else:
                             if count > 6:
-                                return f'{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
+                                return f'{HANGMANPICS[8]}\n{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
                             else:
                                 print(HANGMANPICS[count+1], end="\n")
                                 if word_found_letters != first_and_last_letter:
@@ -146,7 +146,7 @@ def hang():
                         count += 1
                         if len(word_to_find) > 6:
                             if count > 8:
-                                return f'{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
+                                return f'{HANGMANPICS[8]}\n{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
                             else:
                                 print(HANGMANPICS[count-1], end="\n")
                                 if word_found_letters:
@@ -155,7 +155,7 @@ def hang():
                                     print('\n' + (" _ " * len(word_to_find)) + '\n')
                         else:
                             if count > 6:
-                                return f'{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
+                                return f'{HANGMANPICS[8]}\n{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
                             else:
                                 print(HANGMANPICS[count+1], end="\n")
                                 if word_found_letters:
@@ -214,7 +214,7 @@ def hang():
                         count += 1
                         if len(word_to_find) > 8:
                             if count > 8:
-                                return f'{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
+                                return f'{HANGMANPICS[8]}\n{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
                             else:
                                 print(HANGMANPICS[count-1], end="\n")
                                 if word_found_letters:
@@ -223,7 +223,7 @@ def hang():
                                     print('\n' + (" _ " * len(word_to_find)) + '\n')
                         elif len(word_to_find) <= 8 and len(word_to_find) > 5:
                             if count > 5:
-                                return f'{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
+                                return f'{HANGMANPICS[8]}\n{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
                             else:
                                 print(HANGMANPICS_lvl3_1[count-1], end="\n")
                                 if word_found_letters:
@@ -232,7 +232,7 @@ def hang():
                                     print('\n' + (" _ " * len(word_to_find)) + '\n')
                         else:
                             if count > 4:
-                                return f'{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
+                                return f'{HANGMANPICS[8]}\n{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
                             else:
                                 print(HANGMANPICS_lvl3_2[count-1], end="\n")
                                 if word_found_letters:
