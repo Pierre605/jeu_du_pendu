@@ -13,7 +13,7 @@ def lissage_lettres(word):
         elif l == "â":
             L.append("a")
         else:
-            L.append(l)
+            L.append(l.lower())
     return ('').join(L)
 
 def level_option():
