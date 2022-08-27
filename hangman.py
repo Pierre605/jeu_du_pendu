@@ -50,6 +50,7 @@ def hang():
         first_and_last_letter = []
         word_found_letters = []
         easy_level_setup = []
+        input_play_again = 'o'
 
         first_and_last_letter.append(liss_word_to_find[0])
         first_and_last_letter.append(liss_word_to_find[-1])
@@ -79,31 +80,58 @@ def hang():
                             if liss_word_to_find[i] in word_found_letters:
                                 final1.append(" " + word_to_find[i] + " ")
                             else:
-                                final1.append(" _ ") 
+                                final1.append(" _ ")
+
+                        if input_play_again == 'n':
+                            return ''
+
                         print('\n' + ''.join(final1) + '\n')
 
                         if " _ " not in final1:
-                            return GAME_END[0]
+                            print(GAME_END[0])
+                            input_play_again = input("Une autre partie ? Entrez 'o' oui, 'n' non :  ")
+                            if input_play_again == 'o':
+                                print(hang())
+                            else:
+                                return 'AU REVOIR ...'
+                            input_play_again = 'n'
                         else:
                             input1 = input("Tapez une lettre: ")
                     else:
                         count += 1
                         if len(word_to_find) > 6:
                             if count > 8:
-                                return f'{HANGMANPICS[8]}\n{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
+                                print(f'{HANGMANPICS[8]}\n{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n')
+                                input_play_again = input("Une autre partie ? Entrez 'o' oui, 'n' non :  ")
+                                if input_play_again == 'o':
+                                    print(hang())
+                                else:
+                                    return 'AU REVOIR ...'
+                                input_play_again = 'n'
                             else:
                                 print(HANGMANPICS[count-1], end="\n")
-                                print('\n' + ''.join(final1) + '\n')
+                                if word_found_letters != first_and_last_letter:
+                                    print('\n' + ''.join(final1) + '\n')
+                                else:
+                                    print('\n' + ''.join(easy_level_setup) + '\n')
                         else:
                             if count > 6:
-                                return f'{HANGMANPICS[8]}\n{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
+                                print(f'{HANGMANPICS[8]}\n{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n')
+                                input_play_again = input("Une autre partie ? Entrez 'o' oui, 'n' non :  ")
+                                if input_play_again == 'o':
+                                    print(hang())
+                                else:
+                                    return 'AU REVOIR ...'
+                                input_play_again = 'n'
                             else:
                                 print(HANGMANPICS[count+1], end="\n")
                                 if word_found_letters != first_and_last_letter:
                                     print('\n' + ''.join(final1) + '\n')
                                 else:
                                     print('\n' + ''.join(easy_level_setup) + '\n')
-
+                        
+                        if input_play_again == 'n':
+                            return ''
                         input1 = input("Tapez une lettre: ")
         
             else:
@@ -116,6 +144,7 @@ def hang():
         count = 0
         final1 = []
         word_found_letters = []
+        input_play_again = 'o'
 
         print(' _ ' * len(word_to_find))
 
@@ -136,17 +165,33 @@ def hang():
                                 final1.append(" " + word_to_find[i] + " ")
                             else:
                                 final1.append(" _ ") 
+                        
+                        if input_play_again == 'n':
+                            return ''
+
                         print('\n' + ''.join(final1) + '\n')
 
                         if " _ " not in final1:
-                            return GAME_END[0]
+                            print(GAME_END[0])
+                            input_play_again = input("Une autre partie ? Entrez 'o' oui, 'n' non :  ")
+                            if input_play_again == 'o':
+                                print(hang())
+                            else:
+                                return 'AU REVOIR ...'
+                            input_play_again = 'n'
                         else:
                             input1 = input("Tapez une lettre: ")
                     else:
                         count += 1
                         if len(word_to_find) > 6:
                             if count > 8:
-                                return f'{HANGMANPICS[8]}\n{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
+                                print(f'{HANGMANPICS[8]}\n{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n')
+                                input_play_again = input("Une autre partie ? Entrez 'o' oui, 'n' non :  ")
+                                if input_play_again == 'o':
+                                    print(hang())
+                                else:
+                                    return 'AU REVOIR ...'
+                                input_play_again = 'n'
                             else:
                                 print(HANGMANPICS[count-1], end="\n")
                                 if word_found_letters:
@@ -155,7 +200,13 @@ def hang():
                                     print('\n' + (" _ " * len(word_to_find)) + '\n')
                         else:
                             if count > 6:
-                                return f'{HANGMANPICS[8]}\n{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
+                                print(f'{HANGMANPICS[8]}\n{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n')
+                                input_play_again = input("Une autre partie ? Entrez 'o' oui, 'n' non :  ")
+                                if input_play_again == 'o':
+                                    print(hang())
+                                else:
+                                    return 'AU REVOIR ...'
+                                input_play_again = 'n'
                             else:
                                 print(HANGMANPICS[count+1], end="\n")
                                 if word_found_letters:
@@ -163,7 +214,8 @@ def hang():
                                 else:
                                     print('\n' + (" _ " * len(word_to_find)) + '\n')
                         
-
+                        if input_play_again == 'n':
+                            return ''
                         input1 = input("Tapez une lettre: ")
         
             else:
@@ -175,6 +227,7 @@ def hang():
         count = 0
         final1 = []
         word_found_letters = []
+        input_play_again = 'o'
         HANGMANPICS_lvl3_1 = []
         HANGMANPICS_lvl3_2 = []
         PICS_index_to_keep_1 = [2, 3, 4, 6, 7, 8]
@@ -203,18 +256,34 @@ def hang():
                             if liss_word_to_find[i] in word_found_letters:
                                 final1.append(" " + word_to_find[i] + " ")
                             else:
-                                final1.append(" _ ") 
+                                final1.append(" _ ")
+
+                        if input_play_again == 'n':
+                            return ''
+
                         print('\n' + ''.join(final1) + '\n')
 
                         if " _ " not in final1:
-                            return GAME_END[0]
+                            print(GAME_END[0])
+                            input_play_again = input("Une autre partie ? Entrez 'o' oui, 'n' non :  ")
+                            if input_play_again == 'o':
+                                print(hang())
+                            else:
+                                return 'AU REVOIR ...'
+                            input_play_again = 'n'
                         else:
                             input1 = input("Tapez une lettre: ")
                     else:
                         count += 1
                         if len(word_to_find) > 8:
                             if count > 8:
-                                return f'{HANGMANPICS[8]}\n{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
+                                print(f'{HANGMANPICS[8]}\n{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n')
+                                input_play_again = input("Une autre partie ? Entrez 'o' oui, 'n' non :  ")
+                                if input_play_again == 'o':
+                                    print(hang())
+                                else:
+                                    return 'AU REVOIR ...'
+                                input_play_again = 'n'
                             else:
                                 print(HANGMANPICS[count-1], end="\n")
                                 if word_found_letters:
@@ -223,7 +292,13 @@ def hang():
                                     print('\n' + (" _ " * len(word_to_find)) + '\n')
                         elif len(word_to_find) <= 8 and len(word_to_find) > 5:
                             if count > 5:
-                                return f'{HANGMANPICS[8]}\n{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
+                                print(f'{HANGMANPICS[8]}\n{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n')
+                                input_play_again = input("Une autre partie ? Entrez 'o' oui, 'n' non :  ")
+                                if input_play_again == 'o':
+                                    print(hang())
+                                else:
+                                    return 'AU REVOIR ...'
+                                input_play_again = 'n'
                             else:
                                 print(HANGMANPICS_lvl3_1[count-1], end="\n")
                                 if word_found_letters:
@@ -232,7 +307,13 @@ def hang():
                                     print('\n' + (" _ " * len(word_to_find)) + '\n')
                         else:
                             if count > 4:
-                                return f'{HANGMANPICS[8]}\n{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n'
+                                print(f'{HANGMANPICS[8]}\n{GAME_END[1]}\n\nLe mot cherché était: {word_to_find}\n\n')
+                                input_play_again = input("Une autre partie ? Entrez 'o' oui, 'n' non :  ")
+                                if input_play_again == 'o':
+                                    print(hang())
+                                else:
+                                    return 'AU REVOIR ...'
+                                input_play_again = 'n'
                             else:
                                 print(HANGMANPICS_lvl3_2[count-1], end="\n")
                                 if word_found_letters:
@@ -240,7 +321,8 @@ def hang():
                                 else:
                                     print('\n' + (" _ " * len(word_to_find)) + '\n')
                         
-
+                        if input_play_again == 'n':
+                            return ''
                         input1 = input("Tapez une lettre: ")
         
             else:
