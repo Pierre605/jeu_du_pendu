@@ -37,15 +37,14 @@ def hang():
             clean_francais.append(liste_francais[x][0:-1])
         else:
             clean_francais.append(liste_francais[x])
-    for m in clean_francais:
-        if ' ' in m:
-            clean_francais.remove(m)
+
+    clean_francais = [i for i in clean_francais if ' ' not in i and len(i)>=4]
     
     word_to_find = random.choice(clean_francais)
     liss_word_to_find = lissage_lettres(word_to_find)
 
-    
-    
+
+
     if level == '1':
         print("\nNiveau FACILE\n")
         count = 0
