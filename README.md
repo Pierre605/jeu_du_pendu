@@ -10,6 +10,6 @@ Et voilà !
 Exemples:
 
 ![démarrage niveau facile](/assets/hangman_screen1.png)
-![démarrage niveau facile](/assets/hangman_screen3.png)
 ![démarrage niveau facile](/assets/hangman_screen2.png)
+![démarrage niveau facile](/assets/hangman_screen3.png)
 ![démarrage niveau facile](/assets/hangman_screen4.png)
