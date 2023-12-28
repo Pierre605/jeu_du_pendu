@@ -43,9 +43,6 @@ def hang():
     clean_francais = [i for i in clean_francais if ' ' not in i and len(i)>= 5]
     
     word_to_find = random.choice(clean_francais)
-    word_to_find = "abat-jour"
-    # word_to_find = "baguette magique"
-    word_to_find = "boute-en-train"
     liss_word_to_find = lissage_lettres(word_to_find)
 
 
@@ -73,7 +70,6 @@ def hang():
             else:
                 easy_level_setup.append(" _ ")
         print(''.join(easy_level_setup))
-
 
         while True:
             input1 = input("Tapez une lettre: ")
@@ -247,7 +243,6 @@ def hang():
             HANGMANPICS_lvl3_1.append(HANGMANPICS[i])
         for j in PICS_index_to_keep_2:
             HANGMANPICS_lvl3_2.append(HANGMANPICS[j])
-
 
         init = []
         for i in range(len(word_to_find)):
