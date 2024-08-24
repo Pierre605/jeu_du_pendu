@@ -32,8 +32,9 @@ def hang():
     
     level = level_option()
     clean_francais = []
-    liste_francais1 = open("liste_francais.txt", "r", encoding='latin-1')
+    liste_francais1 = open("liste_francais.txt", "r", encoding='utf-8')
     liste_francais = liste_francais1.readlines()
+
     for x in range(len(liste_francais)):
         if x != len(liste_francais):
             clean_francais.append(liste_francais[x][0:-1])
@@ -42,6 +43,9 @@ def hang():
 
     clean_francais = [i for i in clean_francais if ' ' not in i and len(i)>= 5]
     
+    for w in liste_francais[5000:10000]:
+        print(w)
+
     word_to_find = random.choice(clean_francais)
     liss_word_to_find = lissage_lettres(word_to_find)
 
