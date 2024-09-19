@@ -43,8 +43,8 @@ def hang():
 
     clean_francais = [i for i in clean_francais if ' ' not in i and len(i)>= 5]
     
-    for w in liste_francais[5000:10000]:
-        print(w)
+    # for w in liste_francais[5000:10000]:
+    #     print(w)
 
     word_to_find = random.choice(clean_francais)
     liss_word_to_find = lissage_lettres(word_to_find)
