@@ -1,5 +1,6 @@
 import random
 from ascii_pics import HANGMANPICS, GAME_END, title, bye
+from liste_mots import liste
 
 print(title)
 
@@ -18,6 +19,7 @@ def lissage_lettres(word):
             L.append(l.lower())
     return ('').join(L)
 
+
 def level_option():
     while True:
         level_input = input("\nChoisissez votre niveau de difficulté:\n\nFacile: Tapez 1\nMedium: Tapez 2\nDifficile: Tapez 3\n\n")
@@ -29,26 +31,10 @@ def level_option():
 
 
 def hang():
-    
     level = level_option()
-    clean_francais = []
-    liste_francais1 = open("liste_francais.txt", "r", encoding='utf-8')
-    liste_francais = liste_francais1.readlines()
 
-    for x in range(len(liste_francais)):
-        if x != len(liste_francais):
-            clean_francais.append(liste_francais[x][0:-1])
-        else:
-            clean_francais.append(liste_francais[x])
-
-    clean_francais = [i for i in clean_francais if ' ' not in i and len(i)>= 5]
-    
-    # for w in liste_francais[5000:10000]:
-    #     print(w)
-
-    word_to_find = random.choice(clean_francais)
+    word_to_find = random.choice(liste)
     liss_word_to_find = lissage_lettres(word_to_find)
-
 
     if level == '1':
         print("\nNiveau FACILE\n")
