@@ -9,12 +9,14 @@ def lissage_lettres(word):
     for l in word:
         if l == "ç":
             L.append("c")
-        elif l == "é" or l == "è":
+        elif l in ["é", "è", "ê"]:
             L.append("e")
-        elif l == "î" or l == "ï":
+        elif l in ["î", "ï"]:
             L.append("i")
         elif l == "â":
             L.append("a")
+        elif l == "ô":
+            L.append("o")
         else:
             L.append(l.lower())
     return ('').join(L)
@@ -34,6 +36,7 @@ def hang():
     level = level_option()
 
     word_to_find = random.choice(liste)
+    word_to_find = "entrepôt"
     liss_word_to_find = lissage_lettres(word_to_find)
 
     if level == '1':
