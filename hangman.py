@@ -36,7 +36,6 @@ def hang():
     level = level_option()
 
     word_to_find = random.choice(liste)
-    word_to_find = "entrepôt"
     liss_word_to_find = lissage_lettres(word_to_find)
 
     if level == '1':
